@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Chascona</title>
+<!-- Google Fonts Cinzel -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="side-menu">
+    <ul>
+        <li><a href="#inicio">INICIO</a></li>
+        <li><a href="#servicios">SERVICIOS</a></li>
+        <li><a href="#galeria">GALERÍA</a></li>
+        <li><a href="#nosotros">NOSOTROS</a></li>
+        <li><a href="#contacto">CONTACTO</a></li>
+    </ul>
+</nav>
+
+<section class="section">
+    <!-- Cuadrado negro -->
+    <div class="black-square"></div>
+
+    <!-- Imagen izquierda -->
+    <div class="img-left">
+        <img src="Assets/1.png" alt="Tijera izquierda">
+    </div>
+
+    <!-- Texto vertical japonés -->
+    <div class="text-vertical">
+        毛むくじゃらの女性
+    </div>
+
+    <!-- Bloque derecho -->
+    <div class="right-block">
+        <img class="img-right" src="Assets/2.png" alt="Tijera derecha">
+        <h1 class="title">LA CHASCONA</h1>
+    </div>
+</section>
+
+<div class="models-section">
+    <div class="model-left">
+        <img src="Modelos /1.png" alt="Modelo 1">
+    </div>
+    <div class="text-block">
+        <p>En La Chascona fusionamos técnicas clásicas de peluquería con las tendencias más innovadoras del momento. Nuestro enfoque integral abarca desde cortes arquitectónicos y coloraciones avanzadas hasta técnicas de balayage y ombré que realzan la personalidad única de cada cliente.</p>
+        
+        <p>Especialistas en estilos modernos, trabajamos con métodos de vanguardia como la técnica de corte en capas invisibles, texturizado profesional y tratamientos de restructuración capilar. Nuestra versatilidad nos permite crear desde looks minimalistas hasta transformaciones dramáticas, adaptándonos siempre a tu estilo de vida y preferencias.</p>
+        
+        <p>La Chascona es sinónimo de innovación constante, donde cada servicio se personaliza utilizando las mejores técnicas del sector para lograr resultados excepcionales que reflejan tu esencia.</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const content = document.querySelector('.section');
+        const modelsSection = document.querySelector('.models-section');
+        const designWidth = 1920;
+        const designHeight = 1080;
+
+        function scaleContent() {
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            const scaleX = viewportWidth / designWidth;
+            const scaleY = viewportHeight / designHeight;
+            
+            // Mejora para móvil: permitir escalado mayor en dispositivos pequeños
+            let scale = Math.min(scaleX, scaleY);
+            
+            // En dispositivos móviles (menos de 768px), permitir un escalado más flexible
+            if (viewportWidth <= 768) {
+                const mobileScale = Math.min(scaleX * 1.2, scaleY * 1.2);
+                scale = Math.min(mobileScale, 1); // No exceder el tamaño original
+            }
+
+            const left = (viewportWidth - (designWidth * scale)) / 2;
+            const top = 0; // Alineamos siempre arriba
+
+            // Aplicar escalado a la primera sección
+            content.style.transform = `scale(${scale})`;
+            content.style.left = `${left}px`;
+            content.style.top = `${top}px`;
+
+            // Aplicar el mismo escalado a la sección de modelos
+            modelsSection.style.transform = `scale(${scale})`;
+            modelsSection.style.transformOrigin = 'top left';
+            modelsSection.style.left = `${left}px`;
+            modelsSection.style.top = `${content.offsetHeight * scale}px`;
+        }
+
+        scaleContent();
+        window.addEventListener('resize', scaleContent);
+    });
+</script>
+</body>
+</html>
