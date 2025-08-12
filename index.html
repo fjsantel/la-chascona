@@ -73,8 +73,8 @@
             
             // En dispositivos móviles (menos de 768px), permitir un escalado más flexible
             if (viewportWidth <= 768) {
-                const mobileScale = Math.min(scaleX * 1.2, scaleY * 1.2);
-                scale = Math.min(mobileScale, 1); // No exceder el tamaño original
+                const mobileScale = Math.min(scaleX * 1.5, scaleY * 1.5);
+                scale = Math.min(mobileScale, 1.2); // Permitir hasta 120% del tamaño original
             }
 
             const left = (viewportWidth - (designWidth * scale)) / 2;
