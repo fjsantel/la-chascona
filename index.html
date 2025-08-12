@@ -110,19 +110,12 @@
                 if (textBlock) {
                     textBlock.style.transform = `translateX(-${mobileOffset}px)`;
                 }
-                // Ajustar imagen izquierda para móvil
-                if (imgLeft) {
-                    imgLeft.style.maxHeight = Math.min(900 * scale, viewportHeight * 0.8) + 'px';
-                }
             } else {
                 if (rightBlock) {
                     rightBlock.style.transform = '';
                 }
                 if (textBlock) {
                     textBlock.style.transform = '';
-                }
-                if (imgLeft) {
-                    imgLeft.style.maxHeight = '900px';
                 }
             }
         }
