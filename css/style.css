@@ -50,6 +50,8 @@ body {
 .img-left img {
     max-height: 900px;
     width: auto;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 .right-block {

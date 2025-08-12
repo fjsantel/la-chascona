@@ -100,6 +100,7 @@
             // Ajustar posición de bloques derechos en móvil
             const rightBlock = content.querySelector('.right-block');
             const textBlock = modelsSection.querySelector('.text-block');
+            const imgLeft = content.querySelector('.img-left img');
             
             if (viewportWidth <= 768) {
                 const mobileOffset = viewportWidth * 0.14; // 14% del ancho de pantalla
@@ -109,12 +110,19 @@
                 if (textBlock) {
                     textBlock.style.transform = `translateX(-${mobileOffset}px)`;
                 }
+                // Ajustar imagen izquierda para móvil
+                if (imgLeft) {
+                    imgLeft.style.maxHeight = Math.min(900 * scale, viewportHeight * 0.8) + 'px';
+                }
             } else {
                 if (rightBlock) {
                     rightBlock.style.transform = '';
                 }
                 if (textBlock) {
                     textBlock.style.transform = '';
+                }
+                if (imgLeft) {
+                    imgLeft.style.maxHeight = '900px';
                 }
             }
         }
