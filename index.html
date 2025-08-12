@@ -78,8 +78,13 @@
                 scale = Math.min(mobileScale, 1.2); // Permitir hasta 120% del tamaño original
             }
 
-            const left = (viewportWidth - (designWidth * scale)) / 2;
+            let left = (viewportWidth - (designWidth * scale)) / 2;
             const top = 0; // Alineamos siempre arriba
+
+            // En móvil, mover contenido 3% hacia la izquierda
+            if (viewportWidth <= 768) {
+                left = left - (viewportWidth * 0.03);
+            }
 
             // Aplicar escalado a la primera sección
             content.style.transform = `scale(${scale})`;
