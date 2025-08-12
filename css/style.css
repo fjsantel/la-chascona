@@ -109,7 +109,6 @@ body {
     color: #333;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    max-width: calc(100vw - 120px);
 }
 
 .text-block p {
@@ -157,54 +156,19 @@ body {
     font-weight: 700;
 }
 
-/* Optimizaciones móviles para mejor rendimiento y legibilidad */
+/* Solo protección contra solapamiento del menú */
 @media (max-width: 768px) {
     body {
-        overflow-x: hidden;
         padding-right: 80px;
     }
     
-    .text-block {
-        font-size: 18px;
-        line-height: 2;
-        text-align: left;
-        width: auto;
-        margin-right: 20px;
-        max-width: calc(100vw - 120px);
-    }
-    
     .side-menu {
-        right: 20px;
         z-index: 2000;
-    }
-    
-    .side-menu a {
-        font-size: 16px;
-        letter-spacing: 1.5px;
-    }
-    
-    .title {
-        font-size: 42px;
-        line-height: 1.2;
-    }
-    
-    .text-vertical {
-        font-size: 48px;
     }
 }
 
-/* Protección adicional contra solapamiento en pantallas muy pequeñas */
 @media (max-width: 480px) {
     body {
         padding-right: 100px;
-    }
-    
-    .text-block {
-        max-width: calc(100vw - 140px);
-        margin-right: 10px;
-    }
-    
-    .side-menu {
-        right: 15px;
     }
 }
