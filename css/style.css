@@ -19,6 +19,7 @@ body {
     box-sizing: border-box;
     position: absolute;
     transform-origin: top left;
+    padding-right: 100px;
 }
 
 .black-square {
@@ -76,12 +77,14 @@ body {
     width: 1920px;
     background-color: white;
     padding: 0;
+    padding-right: 100px;
     margin: 0;
     position: absolute;
     transform-origin: top left;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .model-left {
@@ -156,19 +159,7 @@ body {
     font-weight: 700;
 }
 
-/* Solo protección contra solapamiento del menú */
-@media (max-width: 768px) {
-    body {
-        padding-right: 80px;
-    }
-    
-    .side-menu {
-        z-index: 2000;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        padding-right: 100px;
-    }
+/* Solo protección del z-index del menú */
+.side-menu {
+    z-index: 2000;
 }
