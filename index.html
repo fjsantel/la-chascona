@@ -96,6 +96,27 @@
             modelsSection.style.transformOrigin = 'top left';
             modelsSection.style.left = `${left}px`;
             modelsSection.style.top = `${content.offsetHeight * scale}px`;
+
+            // Ajustar posición de bloques derechos en móvil
+            const rightBlock = content.querySelector('.right-block');
+            const textBlock = modelsSection.querySelector('.text-block');
+            
+            if (viewportWidth <= 768) {
+                const mobileOffset = viewportWidth * 0.04; // 4% del ancho de pantalla
+                if (rightBlock) {
+                    rightBlock.style.transform = `translateX(-${mobileOffset}px)`;
+                }
+                if (textBlock) {
+                    textBlock.style.transform = `translateX(-${mobileOffset}px)`;
+                }
+            } else {
+                if (rightBlock) {
+                    rightBlock.style.transform = '';
+                }
+                if (textBlock) {
+                    textBlock.style.transform = '';
+                }
+            }
         }
 
         scaleContent();
