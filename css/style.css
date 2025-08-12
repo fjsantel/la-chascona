@@ -4,6 +4,7 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .section {
@@ -156,6 +157,10 @@ body {
 
 /* Optimizaciones móviles para mejor rendimiento y legibilidad */
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
     .text-block {
         font-size: 18px;
         line-height: 2;
