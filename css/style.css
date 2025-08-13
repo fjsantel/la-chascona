@@ -1,10 +1,9 @@
 body {
     margin: 0;
     background-color: white;
-    display: flex;
-    justify-content: center;
     min-height: 100vh;
     overflow-x: hidden;
+    width: 100vw;
 }
 
 .section {
@@ -210,34 +209,27 @@ body {
     cursor: pointer;
 }
 
-/* Media query para móvil */
+/* Media query para móvil - Mantener exactas proporciones y alineaciones de la web */
 @media (max-width: 768px) {
+    /* Bloque más ancho, texto más grande y desplazado a la izquierda */
+    .text-block {
+        font-size: 33px !important; /* Texto 3% más grande (32px * 1.03 = 33px) */
+        line-height: 1.8 !important; /* Mismo interlineado que versión web */
+        width: 95vw !important; /* Mucho más ancho para que sea menos alto */
+        right: 31vw !important; /* Desplazado 30% a la izquierda (2.5vw + 28.5vw = 31vw) */
+        text-align: justify !important; /* MISMO justificado que versión web */
+        text-justify: inter-word !important; /* MISMA distribución que versión web */
+        /* Bloque más ancho = menos líneas = menos altura */
+    }
+    
+    /* Imagen 3 mucho más abajo en móvil (80% más abajo desde la nueva posición) */
     .image-3 {
         right: var(--mobile-image3-right, 483px);
-        top: var(--mobile-image3-top, 881px);
+        top: var(--mobile-image3-top, 2061px); /* 1145px + 80% (916px) = 2061px */
         transform: translateX(var(--mobile-image3-x, 350px)) translateY(var(--mobile-image3-y, 181px)) scale(var(--mobile-image3-scale, 4.5));
     }
     
-    .text-block {
-        right: auto !important;
-        left: 50% !important;
-        transform: translateX(calc(-50% + var(--mobile-rightblock-img-x, 354px) * 0.8 + var(--mobile-textblock-offset-x, 100px))) translateY(var(--mobile-textblock-y, 300px)) scale(var(--mobile-textblock-scale, 1.5)) !important;
-        width: var(--mobile-textblock-width, 400px) !important;
-        font-size: 20px !important; /* Texto optimizado para móvil */
-        line-height: 1.6 !important; /* Interlineado para justificado */
-        text-align: justify !important; /* Texto justificado */
-        text-justify: inter-word !important; /* Justificado por palabras */
-        margin: 0 !important;
-        position: absolute !important;
-        font-family: 'Cinzel', serif !important;
-        color: #333 !important;
-        padding: 25px !important;
-        background: rgba(255, 255, 255, 0.98) !important;
-        border-radius: 0px !important; /* Rectangular perfecto */
-        box-shadow: 0 2px 15px rgba(0,0,0,0.15) !important;
-        border: 1px solid rgba(0,0,0,0.1) !important; /* Bordes definidos */
-    }
-    
+    /* Mantener controles de right-block para alineación perfecta */
     .right-block {
         transform: translateX(var(--mobile-rightblock-x, -34.86px)) translateY(var(--mobile-rightblock-y, 0px)) scale(var(--mobile-rightblock-scale, 2));
     }
@@ -248,7 +240,7 @@ body {
     }
     
     .right-block .title {
-        font-size: var(--mobile-rightblock-title-size, 72px); /* 36px * 2 para proporcionar con la escala */
+        font-size: var(--mobile-rightblock-title-size, 72px);
         transform: translateX(var(--mobile-rightblock-img-x, 354px)) translateY(var(--mobile-rightblock-title-offset-y, 0px));
     }
 }
