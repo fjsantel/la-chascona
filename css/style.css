@@ -209,17 +209,26 @@ body {
     cursor: pointer;
 }
 
-/* Media query para móvil - Mantener exactas proporciones y alineaciones de la web */
-@media (max-width: 768px) {
-    /* Bloque más ancho, texto más grande y desplazado a la izquierda */
+/* Media query para móvil vertical (portrait) */
+@media (max-width: 768px) and (orientation: portrait) {
+    /* Nuevo posicionamiento del bloque de texto */
     .text-block {
-        font-size: 33px !important; /* Texto 3% más grande (32px * 1.03 = 33px) */
-        line-height: 1.8 !important; /* Mismo interlineado que versión web */
-        width: 95vw !important; /* Mucho más ancho para que sea menos alto */
-        right: 31vw !important; /* Desplazado 30% a la izquierda (2.5vw + 28.5vw = 31vw) */
-        text-align: justify !important; /* MISMO justificado que versión web */
-        text-justify: inter-word !important; /* MISMA distribución que versión web */
-        /* Bloque más ancho = menos líneas = menos altura */
+        position: fixed !important;
+        top: 0vh !important;
+        left: 295vw !important;
+        right: auto !important;
+        width: 90vw !important;
+        font-size: 18px !important;
+        line-height: 1.6 !important;
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        background: transparent !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        z-index: 100 !important;
+        transform: scale(2) !important;
+        transform-origin: top left !important;
     }
     
     /* Imagen 3 mucho más abajo en móvil (80% más abajo desde la nueva posición) */
@@ -231,18 +240,23 @@ body {
     
     /* Mantener controles de right-block para alineación perfecta */
     .right-block {
-        transform: translateX(var(--mobile-rightblock-x, -34.86px)) translateY(var(--mobile-rightblock-y, 0px)) scale(var(--mobile-rightblock-scale, 2));
+        transform: translateX(calc(var(--mobile-rightblock-x, -34.86px) - 30vw)) translateY(var(--mobile-rightblock-y, 0px)) scale(var(--mobile-rightblock-scale, 2));
     }
     
     .right-block .img-right {
         max-width: var(--mobile-rightblock-img-width, 661px);
-        transform: translateX(var(--mobile-rightblock-img-x, 354px)) translateY(var(--mobile-rightblock-img-y, 0px));
+        transform: translateX(calc(var(--mobile-rightblock-img-x, 354px) - 50vw)) translateY(var(--mobile-rightblock-img-y, 0px));
     }
     
     .right-block .title {
         font-size: var(--mobile-rightblock-title-size, 72px);
-        transform: translateX(var(--mobile-rightblock-img-x, 354px)) translateY(var(--mobile-rightblock-title-offset-y, 0px));
+        transform: translateX(calc(var(--mobile-rightblock-img-x, 354px) - 48vw)) translateY(var(--mobile-rightblock-title-offset-y, 0px));
     }
+}
+
+/* Media query para móvil horizontal (landscape) - usar mismos estilos que la web */
+@media (max-width: 768px) and (orientation: landscape) {
+    /* En landscape, usar los estilos estándar de la web sin modificaciones */
 }
 
 .side-menu {
