@@ -53,6 +53,9 @@
         
         <p>La Chascona es sinónimo de innovación constante, donde cada servicio se personaliza utilizando las mejores técnicas del sector para lograr resultados excepcionales que reflejan tu esencia.</p>
     </div>
+    <div class="image-3">
+        <img src="Assets/3.png" alt="Imagen 3">
+    </div>
 </div>
 
 <script>
@@ -132,5 +135,292 @@
         window.addEventListener('resize', scaleContent);
     });
 </script>
+
+<!-- Control de posición para móvil -->
+<div class="mobile-control" id="mobileControl">
+    <button class="toggle-btn" onclick="toggleControl()" style="margin-bottom: 10px;">Cerrar Control</button>
+    
+    <div class="control-section">
+        <h4>📷 IMAGEN 3</h4>
+        <div class="control-row">
+            <label>Right:</label>
+            <input type="range" id="img3Right" min="0" max="800" value="483" oninput="updateImage3()">
+            <input type="number" id="img3RightNum" value="483" oninput="updateImage3()">
+        </div>
+        <div class="control-row">
+            <label>Top:</label>
+            <input type="range" id="img3Top" min="0" max="1200" value="881" oninput="updateImage3()">
+            <input type="number" id="img3TopNum" value="881" oninput="updateImage3()">
+        </div>
+        <div class="control-row">
+            <label>X:</label>
+            <input type="range" id="img3X" min="-500" max="500" value="350" oninput="updateImage3()">
+            <input type="number" id="img3XNum" value="350" oninput="updateImage3()">
+        </div>
+        <div class="control-row">
+            <label>Y:</label>
+            <input type="range" id="img3Y" min="-500" max="500" value="181" oninput="updateImage3()">
+            <input type="number" id="img3YNum" value="181" oninput="updateImage3()">
+        </div>
+        <div class="control-row">
+            <label>Scale:</label>
+            <input type="range" id="img3Scale" min="0.1" max="10" step="0.1" value="4.5" oninput="updateImage3()">
+            <input type="number" id="img3ScaleNum" step="0.1" value="4.5" oninput="updateImage3()">
+        </div>
+    </div>
+
+    <div class="control-section">
+        <h4>🏷️ TÍTULO & TIJERA</h4>
+        <div class="control-row">
+            <label>X:</label>
+            <input type="range" id="rightX" min="-200" max="200" value="-34.86" step="0.1" oninput="updateRightBlock()">
+            <input type="number" id="rightXNum" value="-34.86" step="0.1" oninput="updateRightBlock()">
+        </div>
+        <div class="control-row">
+            <label>Y:</label>
+            <input type="range" id="rightY" min="-300" max="300" value="0" oninput="updateRightBlock()">
+            <input type="number" id="rightYNum" value="0" oninput="updateRightBlock()">
+        </div>
+        <div class="control-row">
+            <label>Scale:</label>
+            <input type="range" id="rightScale" min="0.5" max="5" step="0.1" value="2" oninput="updateRightBlock()">
+            <input type="number" id="rightScaleNum" step="0.1" value="2" oninput="updateRightBlock()">
+        </div>
+        <div class="control-row">
+            <label>Img W:</label>
+            <input type="range" id="rightImgWidth" min="200" max="800" value="661" oninput="updateRightBlock()">
+            <input type="number" id="rightImgWidthNum" value="661" oninput="updateRightBlock()">
+        </div>
+        <div class="control-row">
+            <label>Img X:</label>
+            <input type="range" id="rightImgX" min="-200" max="400" value="354" oninput="updateRightBlock()">
+            <input type="number" id="rightImgXNum" value="354" oninput="updateRightBlock()">
+        </div>
+        <div class="control-row">
+            <label>Img Y:</label>
+            <input type="range" id="rightImgY" min="-200" max="200" value="0" oninput="updateRightBlock()">
+            <input type="number" id="rightImgYNum" value="0" oninput="updateRightBlock()">
+        </div>
+        <div class="control-row">
+            <label>Title:</label>
+            <input type="range" id="rightTitleSize" min="30" max="120" value="72" oninput="updateRightBlock()">
+            <input type="number" id="rightTitleSizeNum" value="72" oninput="updateRightBlock()">
+        </div>
+        <div class="control-row">
+            <label>Title Y:</label>
+            <input type="range" id="rightTitleOffsetY" min="-100" max="100" value="0" oninput="updateRightBlock()">
+            <input type="number" id="rightTitleOffsetYNum" value="0" oninput="updateRightBlock()">
+        </div>
+    </div>
+
+    <div class="control-section">
+        <h4>📝 TEXTO (JUSTIFICADO)</h4>
+        <div class="control-row">
+            <label>Offset X:</label>
+            <input type="range" id="textOffsetX" min="-200" max="300" value="100" oninput="updateTextBlock()">
+            <input type="number" id="textOffsetXNum" value="100" oninput="updateTextBlock()">
+        </div>
+        <div class="control-row">
+            <label>Y:</label>
+            <input type="range" id="textY" min="200" max="700" value="300" oninput="updateTextBlock()">
+            <input type="number" id="textYNum" value="300" oninput="updateTextBlock()">
+        </div>
+        <div class="control-row">
+            <label>Scale:</label>
+            <input type="range" id="textScale" min="0.8" max="3" step="0.1" value="1.5" oninput="updateTextBlock()">
+            <input type="number" id="textScaleNum" step="0.1" value="1.5" oninput="updateTextBlock()">
+        </div>
+        <div class="control-row">
+            <label>Width:</label>
+            <input type="range" id="textWidth" min="300" max="500" value="400" oninput="updateTextBlock()">
+            <input type="number" id="textWidthNum" value="400" oninput="updateTextBlock()">
+        </div>
+    </div>
+</div>
+
+<!-- Botón flotante para mostrar control -->
+<button onclick="toggleControl()" style="position:fixed; bottom:20px; right:20px; z-index:9998; background:#007bff; color:white; border:none; padding:10px; border-radius:50%; font-size:16px; cursor:pointer; display:none;" id="showControlBtn">⚙️</button>
+
+<script>
+// Detectar si es móvil y mostrar/ocultar controles
+function checkMobile() {
+    const isMobile = window.innerWidth <= 768;
+    const control = document.getElementById('mobileControl');
+    const showBtn = document.getElementById('showControlBtn');
+    
+    if (isMobile) {
+        showBtn.style.display = 'block';
+    } else {
+        control.classList.remove('active');
+        showBtn.style.display = 'none';
+    }
+}
+
+function toggleControl() {
+    const control = document.getElementById('mobileControl');
+    const showBtn = document.getElementById('showControlBtn');
+    
+    if (control.classList.contains('active')) {
+        control.classList.remove('active');
+        showBtn.style.display = 'block';
+    } else {
+        control.classList.add('active');
+        showBtn.style.display = 'none';
+    }
+}
+
+function updateImage3() {
+    const right = document.getElementById('img3Right').value;
+    const top = document.getElementById('img3Top').value;
+    const x = document.getElementById('img3X').value;
+    const y = document.getElementById('img3Y').value;
+    const scale = document.getElementById('img3Scale').value;
+    
+    // Sincronizar sliders con inputs numéricos
+    document.getElementById('img3RightNum').value = right;
+    document.getElementById('img3TopNum').value = top;
+    document.getElementById('img3XNum').value = x;
+    document.getElementById('img3YNum').value = y;
+    document.getElementById('img3ScaleNum').value = scale;
+    
+    // Aplicar cambios
+    document.documentElement.style.setProperty('--mobile-image3-right', right + 'px');
+    document.documentElement.style.setProperty('--mobile-image3-top', top + 'px');
+    document.documentElement.style.setProperty('--mobile-image3-x', x + 'px');
+    document.documentElement.style.setProperty('--mobile-image3-y', y + 'px');
+    document.documentElement.style.setProperty('--mobile-image3-scale', scale);
+}
+
+function updateRightBlock() {
+    const x = document.getElementById('rightX').value;
+    const y = document.getElementById('rightY').value;
+    const scale = document.getElementById('rightScale').value;
+    const imgWidth = document.getElementById('rightImgWidth').value;
+    const imgX = document.getElementById('rightImgX').value;
+    const imgY = document.getElementById('rightImgY').value;
+    const titleSize = document.getElementById('rightTitleSize').value;
+    const titleOffsetY = document.getElementById('rightTitleOffsetY').value;
+    
+    // Sincronizar sliders con inputs numéricos
+    document.getElementById('rightXNum').value = x;
+    document.getElementById('rightYNum').value = y;
+    document.getElementById('rightScaleNum').value = scale;
+    document.getElementById('rightImgWidthNum').value = imgWidth;
+    document.getElementById('rightImgXNum').value = imgX;
+    document.getElementById('rightImgYNum').value = imgY;
+    document.getElementById('rightTitleSizeNum').value = titleSize;
+    document.getElementById('rightTitleOffsetYNum').value = titleOffsetY;
+    
+    // Aplicar cambios
+    document.documentElement.style.setProperty('--mobile-rightblock-x', x + 'px');
+    document.documentElement.style.setProperty('--mobile-rightblock-y', y + 'px');
+    document.documentElement.style.setProperty('--mobile-rightblock-scale', scale);
+    document.documentElement.style.setProperty('--mobile-rightblock-img-width', imgWidth + 'px');
+    document.documentElement.style.setProperty('--mobile-rightblock-img-x', imgX + 'px');
+    document.documentElement.style.setProperty('--mobile-rightblock-img-y', imgY + 'px');
+    document.documentElement.style.setProperty('--mobile-rightblock-title-size', titleSize + 'px');
+    document.documentElement.style.setProperty('--mobile-rightblock-title-offset-y', titleOffsetY + 'px');
+}
+
+function updateTextBlock() {
+    const offsetX = document.getElementById('textOffsetX').value;
+    const y = document.getElementById('textY').value;
+    const scale = document.getElementById('textScale').value;
+    const width = document.getElementById('textWidth').value;
+    
+    // Sincronizar sliders con inputs numéricos
+    document.getElementById('textOffsetXNum').value = offsetX;
+    document.getElementById('textYNum').value = y;
+    document.getElementById('textScaleNum').value = scale;
+    document.getElementById('textWidthNum').value = width;
+    
+    // Aplicar cambios
+    document.documentElement.style.setProperty('--mobile-textblock-offset-x', offsetX + 'px');
+    document.documentElement.style.setProperty('--mobile-textblock-y', y + 'px');
+    document.documentElement.style.setProperty('--mobile-textblock-scale', scale);
+    document.documentElement.style.setProperty('--mobile-textblock-width', width + 'px');
+}
+
+// Sincronizar inputs numéricos con sliders
+document.addEventListener('DOMContentLoaded', function() {
+    // Para imagen 3
+    document.getElementById('img3RightNum').addEventListener('input', function() {
+        document.getElementById('img3Right').value = this.value;
+        updateImage3();
+    });
+    document.getElementById('img3TopNum').addEventListener('input', function() {
+        document.getElementById('img3Top').value = this.value;
+        updateImage3();
+    });
+    document.getElementById('img3XNum').addEventListener('input', function() {
+        document.getElementById('img3X').value = this.value;
+        updateImage3();
+    });
+    document.getElementById('img3YNum').addEventListener('input', function() {
+        document.getElementById('img3Y').value = this.value;
+        updateImage3();
+    });
+    document.getElementById('img3ScaleNum').addEventListener('input', function() {
+        document.getElementById('img3Scale').value = this.value;
+        updateImage3();
+    });
+    
+    // Para right-block
+    document.getElementById('rightXNum').addEventListener('input', function() {
+        document.getElementById('rightX').value = this.value;
+        updateRightBlock();
+    });
+    document.getElementById('rightYNum').addEventListener('input', function() {
+        document.getElementById('rightY').value = this.value;
+        updateRightBlock();
+    });
+    document.getElementById('rightScaleNum').addEventListener('input', function() {
+        document.getElementById('rightScale').value = this.value;
+        updateRightBlock();
+    });
+    document.getElementById('rightImgWidthNum').addEventListener('input', function() {
+        document.getElementById('rightImgWidth').value = this.value;
+        updateRightBlock();
+    });
+    document.getElementById('rightImgXNum').addEventListener('input', function() {
+        document.getElementById('rightImgX').value = this.value;
+        updateRightBlock();
+    });
+    document.getElementById('rightImgYNum').addEventListener('input', function() {
+        document.getElementById('rightImgY').value = this.value;
+        updateRightBlock();
+    });
+    document.getElementById('rightTitleSizeNum').addEventListener('input', function() {
+        document.getElementById('rightTitleSize').value = this.value;
+        updateRightBlock();
+    });
+    document.getElementById('rightTitleOffsetYNum').addEventListener('input', function() {
+        document.getElementById('rightTitleOffsetY').value = this.value;
+        updateRightBlock();
+    });
+    
+    // Para texto
+    document.getElementById('textOffsetXNum').addEventListener('input', function() {
+        document.getElementById('textOffsetX').value = this.value;
+        updateTextBlock();
+    });
+    document.getElementById('textYNum').addEventListener('input', function() {
+        document.getElementById('textY').value = this.value;
+        updateTextBlock();
+    });
+    document.getElementById('textScaleNum').addEventListener('input', function() {
+        document.getElementById('textScale').value = this.value;
+        updateTextBlock();
+    });
+    document.getElementById('textWidthNum').addEventListener('input', function() {
+        document.getElementById('textWidth').value = this.value;
+        updateTextBlock();
+    });
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+});
+</script>
+
 </body>
 </html>
