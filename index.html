@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <title>La Chascona</title>
 <!-- Google Fonts Cinzel -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
@@ -75,10 +75,13 @@
             // Mejora para móvil: permitir escalado mayor en dispositivos pequeños
             let scale = Math.min(scaleX, scaleY);
             
-            // En dispositivos móviles, ajustar el escalado
+            // En dispositivos móviles, asegurar que todo sea visible incluyendo el menú
             if (isMobile) {
-                const mobileScale = Math.min(scaleX * 1.3, scaleY * 1.3);
-                scale = Math.min(mobileScale, 1.0); // No exceder tamaño original en móvil real
+                // Calcular escala que permita ver todo el contenido + menú
+                const contentWidthWithMenu = designWidth + 150; // Contenido + espacio para menú
+                const availableWidth = viewportWidth * 0.95; // 95% del ancho disponible
+                const maxScaleForMenu = availableWidth / contentWidthWithMenu;
+                scale = Math.min(scale, maxScaleForMenu);
             }
 
             let left = (viewportWidth - (designWidth * scale)) / 2;
