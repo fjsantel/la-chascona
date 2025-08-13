@@ -254,9 +254,34 @@ body {
     }
 }
 
-/* Media query para móvil horizontal (landscape) - usar mismos estilos que la web */
+/* Media query para móvil horizontal (landscape) - usar ancho completo */
 @media (max-width: 768px) and (orientation: landscape) {
-    /* En landscape, usar los estilos estándar de la web sin modificaciones */
+    body {
+        overflow-x: auto !important;
+        width: 100vw !important;
+    }
+    
+    .section {
+        width: 100vw !important;
+        height: 100vh !important;
+        padding-right: 0 !important;
+    }
+    
+    .models-section {
+        width: 100vw !important;
+        padding-right: 0 !important;
+    }
+    
+    /* Menú más grande y legible en móvil horizontal */
+    .side-menu a {
+        font-size: 18px !important;
+        letter-spacing: 2px !important;
+        font-weight: 500 !important;
+    }
+    
+    .side-menu li {
+        margin: 40px 0 !important;
+    }
 }
 
 .side-menu {
