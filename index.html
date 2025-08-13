@@ -82,6 +82,8 @@
                 const availableWidth = viewportWidth * 0.95; // 95% del ancho disponible
                 const maxScaleForMenu = availableWidth / contentWidthWithMenu;
                 scale = Math.min(scale, maxScaleForMenu);
+                // Escalar contenido 7% adicional en móvil
+                scale = scale * 1.07;
             }
 
             let left = (viewportWidth - (designWidth * scale)) / 2;
